@@ -22,7 +22,49 @@ body {
 /*------------------- 
    header styles
 ---------------------*/
+/* animation */
 @keyframes sliding {
+  0% {
+    background-color: lawngreen;
+    left: 0;
+    top: 250px;
+  }
+  25% {
+    top: 200px;
+    background-color: yellow;
+    transform: scale(0.5);
+  }
+  50% {
+    top: 0;
+    background-color: aqua;
+  }
+  75% {
+    top: 200px;
+    background-color: darksalmon;
+    transform: scale(0.5);
+  }
+  100% {
+    background-color: magenta;
+    left: 1000px;
+    top: 0;
+    transform: scale(10);
+  }
+}
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: lawngreen;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+.header-flexible-container:hover .ball {
+  animation: sliding 2s ease-in-out 0.5s infinite alternate;
+}
+.header-flexible-container:active .ball {
+  animation-play-state: paused;
+}
+@keyframes sliding1 {
   from {
     background-color: lawngreen;
     left: 0%;
@@ -32,13 +74,13 @@ body {
     left: 100%;
   }
 }
-.ball {
+.ball1 {
   width: 100px;
   height: 100px;
   background-color: lawngreen;
   border-radius: 50%;
   position: relative;
-  animation: sliding 1s ease-in-out 0.5s infinite alternate;
+  animation: sliding1 1s ease-in-out 0.5s infinite alternate;
   animation-play-state: running;
 }
 h1 {
